@@ -49,7 +49,7 @@ if __name__ == '__main__':
         
     prnt('[i] :heavy_dollar_sign: Welcome to the ArchiveStream Shell!')
     prnt('    [deep_sky_blue4]Docs:[/deep_sky_blue4] [link=https://github.com/ArchiveStream/ArchiveStream/wiki/Usage#Shell-Usage]https://github.com/ArchiveStream/ArchiveStream/wiki/Usage#Shell-Usage[/link]')
-    prnt('          [link=https://docs.archivestream.github.io/en/dev/apidocs/archivestream/archivestream.html]https://docs.archivestream.github.io/en/dev/apidocs/archivestream/archivestream.html[/link]')
+    prnt('          [link=https://docs.archivestream.io/en/dev/apidocs/archivestream/archivestream.html]https://docs.archivestream.io/en/dev/apidocs/archivestream/archivestream.html[/link]')
     prnt()
     prnt(' :grey_question: [violet]Hint[/] [i]Here are some examples to get started:[/]')
     prnt('    add[blink][deep_sky_blue4]?[/deep_sky_blue4][/blink]                                                                        [grey53]# add ? after anything to get help[/]')

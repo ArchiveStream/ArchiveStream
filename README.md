@@ -1,10 +1,10 @@
 <div align="center" style="text-align: center; width: 100%">
-<img src="https://archivestream.github.io/icon.png" height="90px"/>
+<img src="https://archivestream.io/icon.png" height="90px"/>
 <h1>ArchiveStream<br/><sub>Open-source self-hosted web archiving.</sub></h1>
 
 <br/>
 
-▶️ <a href="https://github.com/ArchiveStream/ArchiveStream/wiki/Quickstart">Quickstart</a> | <a href="https://demo.archivestream.github.io">Demo</a> | <a href="https://github.com/ArchiveStream/ArchiveStream">GitHub</a> | <a href="https://github.com/ArchiveStream/ArchiveStream/wiki">Documentation</a> | <a href="#background--motivation">Info & Motivation</a> | <a href="https://github.com/ArchiveStream/ArchiveStream/wiki/Web-Archiving-Community">Community</a>
+▶️ <a href="https://github.com/ArchiveStream/ArchiveStream/wiki/Quickstart">Quickstart</a> | <a href="https://demo.archivestream.io">Demo</a> | <a href="https://github.com/ArchiveStream/ArchiveStream">GitHub</a> | <a href="https://github.com/ArchiveStream/ArchiveStream/wiki">Documentation</a> | <a href="#background--motivation">Info & Motivation</a> | <a href="https://github.com/ArchiveStream/ArchiveStream/wiki/Web-Archiving-Community">Community</a>
 
 <br/>
 
@@ -13,7 +13,7 @@
 <a href="https://github.com/ArchiveStream/ArchiveStream/blob/dev/LICENSE"><img src="https://img.shields.io/badge/Open_source-MIT-green.svg?logo=git&logoColor=green"/></a> <a href="https://github.com/ArchiveStream/ArchiveStream/commits/dev"><img src="https://img.shields.io/github/last-commit/ArchiveStream/ArchiveStream.svg?logo=Sublime+Text&logoColor=green&label=Active"/></a> &nbsp; <a href="https://github.com/ArchiveStream/ArchiveStream"><img src="https://img.shields.io/github/stars/ArchiveStream/ArchiveStream.svg?logo=github&label=Stars&logoColor=blue"/></a> &nbsp; <a href="https://hub.docker.com/r/archivestream/archivestream"><img src="https://img.shields.io/docker/pulls/archivestream/archivestream.svg?label=Docker+Pulls"/></a> <a href="https://pypi.org/project/archivestream/"><img src="https://img.shields.io/pypi/dm/archivestream?label=PyPI%20Installs&color=%235f7dae"/></a> <a href="https://chromewebstore.google.com/detail/archivestream-exporter/habonpimjphpdnmcfkaockjnffodikoj"><img src="https://img.shields.io/chrome-web-store/users/habonpimjphpdnmcfkaockjnffodikoj?label=Chrome%20Store&color=%231973e8"/></a>
 
 <!--<pre lang="bash" align="left"><code style="white-space: pre-line; text-align: left" align="left">
-curl -fsSL 'https://get.archivestream.github.io' | bash    # (or see pip/brew/Docker instructions below)
+curl -fsSL 'https://get.archivestream.io' | bash    # (or see pip/brew/Docker instructions below)
 </code></pre>-->
 
 </div>
@@ -74,7 +74,7 @@ The goal is to sleep soundly knowing the part of the internet you care about wil
 <br/>
 <pre lang="bash"><code style="white-space: pre-line"># Option A: Get ArchiveStream with Docker Compose (recommended):
 mkdir -p ~/archivestream/data && cd ~/archivestream
-curl -fsSL 'https://docker-compose.archivestream.github.io' > docker-compose.yml   # edit options in this file as-needed
+curl -fsSL 'https://docker-compose.archivestream.io' > docker-compose.yml   # edit options in this file as-needed
 docker compose run archivestream init --setup
 # docker compose run archivestream add 'https://example.com'
 # docker compose run archivestream help
@@ -99,7 +99,7 @@ archivestream init --setup
 <br/>
 <br/>
 # Option D: Or use the optional auto setup script to install it
-curl -fsSL 'https://get.archivestream.github.io' | bash
+curl -fsSL 'https://get.archivestream.io' | bash
 </code></pre>
 <br/>
 <sub>Open <a href="http://localhost:8000"><code>http://localhost:8000</code></a> to see your server's Web UI ➡️</sub>
@@ -111,7 +111,7 @@ curl -fsSL 'https://get.archivestream.github.io' | bash
 <br/><br/>
 <img src="https://github.com/ArchiveStream/ArchiveStream/assets/511499/5a7d95f2-6977-4de6-9f08-42851a1fe1d2" height="70px" alt="bookshelf graphic"> &nbsp; <img src="https://github.com/ArchiveStream/ArchiveStream/assets/511499/b2765a33-0d1e-4019-a1db-920c7e00e20e" height="75px" alt="logo" align="top"/> &nbsp; <img src="https://github.com/ArchiveStream/ArchiveStream/assets/511499/5a7d95f2-6977-4de6-9f08-42851a1fe1d2" height="70px" alt="bookshelf graphic">
 <br/><br/>
-<small><a href="https://demo.archivestream.github.io">Demo</a> | <a href="#screenshots">Screenshots</a> | <a href="https://github.com/ArchiveStream/ArchiveStream/wiki/Usage">Usage</a></small>
+<small><a href="https://demo.archivestream.io">Demo</a> | <a href="#screenshots">Screenshots</a> | <a href="https://github.com/ArchiveStream/ArchiveStream/wiki/Usage">Usage</a></small>
 <br/>
 <sub>. . . . . . . . . . . . . . . . . . . . . . . . . . . .</sub>
 <br/><br/>
@@ -130,7 +130,7 @@ curl -fsSL 'https://get.archivestream.github.io' | bash
 - [**Extracts a wide variety of content out-of-the-box**](https://github.com/ArchiveStream/ArchiveStream/issues/51): [media (yt-dlp), articles (readability), code (git), etc.](#output-formats)
 - [**Supports scheduled/realtime importing**](https://github.com/ArchiveStream/ArchiveStream/wiki/Scheduled-Archiving) from [many types of sources](#input-formats)
 - [**Uses standard, durable, long-term formats**](#output-formats) like HTML, JSON, PDF, PNG, MP4, TXT, and WARC
-- [**Usable as a oneshot CLI**](https://github.com/ArchiveStream/ArchiveStream/wiki/Usage#CLI-Usage), [**self-hosted web UI**](https://github.com/ArchiveStream/ArchiveStream/wiki/Usage#UI-Usage), [Python API](https://docs.archivestream.github.io/en/dev/apidocs/archivestream/archivestream.html) (BETA), [REST API](https://github.com/ArchiveStream/ArchiveStream/issues/496) (ALPHA), or [desktop app](https://github.com/ArchiveStream/electron-archivestream)
+- [**Usable as a oneshot CLI**](https://github.com/ArchiveStream/ArchiveStream/wiki/Usage#CLI-Usage), [**self-hosted web UI**](https://github.com/ArchiveStream/ArchiveStream/wiki/Usage#UI-Usage), [Python API](https://docs.archivestream.io/en/dev/apidocs/archivestream/archivestream.html) (BETA), [REST API](https://github.com/ArchiveStream/ArchiveStream/issues/496) (ALPHA), or [desktop app](https://github.com/ArchiveStream/electron-archivestream)
 - [**Saves all pages to archive.org as well**](https://github.com/ArchiveStream/ArchiveStream/wiki/Configuration#save_archive_dot_org) by default for redundancy (can be [disabled](https://github.com/ArchiveStream/ArchiveStream/wiki/Security-Overview#stealth-mode) for local-only mode)
 - Advanced users: support for archiving [content requiring login/paywall/cookies](https://github.com/ArchiveStream/ArchiveStream/wiki/Configuration#chrome_user_data_dir) (see wiki security caveats!)
 - Planned: support for running [JS during archiving](https://github.com/ArchiveStream/ArchiveStream/issues/51) to adblock, [autoscroll](https://github.com/ArchiveStream/ArchiveStream/issues/80), [modal-hide](https://github.com/ArchiveStream/ArchiveStream/issues/175), [thread-expand](https://github.com/ArchiveStream/ArchiveStream/issues/345)
@@ -139,7 +139,7 @@ curl -fsSL 'https://get.archivestream.github.io' | bash
 
 ## 🤝 Professional Integration
 
-ArchiveStream is free for everyone to self-host, but we also provide support, security review, and custom integrations to help NGOs, governments, and other organizations [run ArchiveStream professionally](https://zulip.archivestream.github.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102):
+ArchiveStream is free for everyone to self-host, but we also provide support, security review, and custom integrations to help NGOs, governments, and other organizations [run ArchiveStream professionally](https://zulip.archivestream.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102):
 
 - **Journalists:**
   `crawling during research`, `preserving cited pages`, `fact-checking & review`  
@@ -152,7 +152,7 @@ ArchiveStream is free for everyone to self-host, but we also provide support, se
 - **Governments:**
   `snapshoting public service sites`, `recordkeeping compliance`
 
-> ***[Contact us](https://zulip.archivestream.github.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102)** if your org wants help using ArchiveStream professionally.*  (we are also seeking [grant funding](https://github.com/ArchiveStream/ArchiveStream/issues/1126#issuecomment-1487431394))  
+> ***[Contact us](https://zulip.archivestream.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102)** if your org wants help using ArchiveStream professionally.*  (we are also seeking [grant funding](https://github.com/ArchiveStream/ArchiveStream/issues/1126#issuecomment-1487431394))  
 > We offer: setup & support, CAPTCHA/ratelimit unblocking, SSO, audit logging/chain-of-custody, and more  
 > *ArchiveStream is a 🏛️ 501(c)(3) [nonprofit FSP](https://hackclub.com/hcb/) and all our work supports open-source development.* 
 
@@ -183,7 +183,7 @@ ArchiveStream is free for everyone to self-host, but we also provide support, se
 <li>Download the <a href="https://raw.githubusercontent.com/ArchiveStream/ArchiveStream/dev/docker-compose.yml" download><code>docker-compose.yml</code></a> file into a new empty directory (can be anywhere).
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivestream/data && cd ~/archivestream
 # Read and edit docker-compose.yml options as-needed after downloading
-curl -fsSL 'https://docker-compose.archivestream.github.io' > docker-compose.yml
+curl -fsSL 'https://docker-compose.archivestream.io' > docker-compose.yml
 </code></pre></li>
 <li>Run the initial setup to create an admin user (or set ADMIN_USER/PASS in docker-compose.yml)
 <pre lang="bash"><code style="white-space: pre-line">docker compose run archivestream init --setup
@@ -233,7 +233,7 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 <ol>
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker</a> on your system (optional, highly recommended but not required).</li>
 <li>Run the automatic setup script.
-<pre lang="bash"><code style="white-space: pre-line">curl -fsSL 'https://get.archivestream.github.io' | bash</code></pre>
+<pre lang="bash"><code style="white-space: pre-line">curl -fsSL 'https://get.archivestream.io' | bash</code></pre>
 <i>For more info, see <a href="https://github.com/ArchiveStream/ArchiveStream/wiki/Install#option-b-automatic-setup-script">Install: Bare Metal</a> in the Wiki. ➡️</i>
 </li>
 </ol>
@@ -368,7 +368,7 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 
 <ul>
 <li>Arch: <a href="https://aur.archlinux.org/packages/archivestream/"><code>yay -S archivestream</code></a> (contributed by <a href="https://github.com/imlonghao"><code>@imlonghao</code></a>)</li>
-<li>FreeBSD: <a href="https://github.com/ArchiveStream/ArchiveStream#%EF%B8%8F-easy-setup"><code>curl -fsSL 'https://get.archivestream.github.io' | bash</code></a> (uses <code>pkg</code> + <code>pip3</code> under-the-hood)</li>
+<li>FreeBSD: <a href="https://github.com/ArchiveStream/ArchiveStream#%EF%B8%8F-easy-setup"><code>curl -fsSL 'https://get.archivestream.io' | bash</code></a> (uses <code>pkg</code> + <code>pip3</code> under-the-hood)</li>
 <li>Nix: <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/misc/archivestream/default.nix"><code>nix-env --install archivestream</code></a> (contributed by <a href="https://github.com/siraben"><code>@siraben</code></a>)</li>
 <li>Guix: <a href="https://packages.guix.gnu.org/packages/archivestream/"><code>guix install archivestream</code></a> (contributed by <a href="https://github.com/rakino"><code>@rakino</code></a>)</li>
 <li>More: <a href="https://github.com/ArchiveStream/ArchiveStream/issues/new"><i>contribute another distribution...!</i></a></li>
@@ -427,9 +427,9 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for usage examples using the CLI, W
 <summary><img src="https://user-images.githubusercontent.com/511499/117448723-1663b180-af0d-11eb-837f-d43959227810.png" alt="paid" height="27px" align="top"/> Paid hosting solutions (cloud VPS)</summary>
 <br/>
 <ul>
-<li><a href="https://zulip.archivestream.github.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102">
- <img src="https://img.shields.io/badge/Custom_Development-archivestream.github.io-%231a1a1a.svg?style=flat" height="22px"/>
-</a> (<a href="https://zulip.archivestream.github.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102">get hosting, support, and feature customization directy from us</a>)</li>
+<li><a href="https://zulip.archivestream.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102">
+ <img src="https://img.shields.io/badge/Custom_Development-ArchiveStream.io-%231a1a1a.svg?style=flat" height="22px"/>
+</a> (<a href="https://zulip.archivestream.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102">get hosting, support, and feature customization directy from us</a>)</li>
 <li><a href="https://monadical.com">
  <img src="https://img.shields.io/badge/General_Dev_Consulting-Monadical.com-%231a1a1a.svg?style=flat" height="22px"/>
 </a> (<a href="https://monadical.com/contact-us.html">generalist consultancy that has ArchiveStream experience</a>)</li>
@@ -454,7 +454,7 @@ Other providers of paid ArchiveStream hosting (not officially endorsed):<br/>
 <li><a href="https://aws.amazon.com/marketplace/pp/Linnovate-Open-Source-Innovation-Support-For-Archi/B08RVW6MJ2"><img src="https://img.shields.io/badge/Unmanaged_VPS-AWS-%23ee8135.svg?style=flat" height="22px"/></a> (USD $60-200+/mo)</li>
 <li><a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/meanio.archivestream?ocid=gtmrewards_whatsnewblog_archivestream_vol118"><img src="https://img.shields.io/badge/Unmanaged_VPS-Azure-%237cb300.svg?style=flat" height="22px"/></a> (USD $60-200+/mo)</li>
 <br/>
-<sub><i>Referral links marked 🎗 provide $5-10 of free credit for new users and help pay for our <a href="https://demo.archivestream.github.io">demo server</a> hosting costs.</i></sub>
+<sub><i>Referral links marked 🎗 provide $5-10 of free credit for new users and help pay for our <a href="https://demo.archivestream.io">demo server</a> hosting costs.</i></sub>
 </ul>
 
 For more discussion on managed and paid hosting options see here: <a href="https://github.com/ArchiveStream/ArchiveStream/issues/531">Issue #531</a>.
@@ -631,7 +631,7 @@ docker run -it -v $PWD:/data archivestream/archivestream add --depth=1 'https://
 <div align="center" style="text-align: center">
 <sub>. . . . . . . . . . . . . . . . . . . . . . . . . . . .</sub>
 <br/><br/>
-<a href="https://demo.archivestream.github.io">DEMO: <code>https://demo.archivestream.github.io</code></a><br/>
+<a href="https://demo.archivestream.io">DEMO: <code>https://demo.archivestream.io</code></a><br/>
 <a href="https://github.com/ArchiveStream/ArchiveStream/wiki/Usage">Usage</a> | <a href="https://github.com/ArchiveStream/ArchiveStream/wiki/Configuration">Configuration</a> | <a href="#Caveats">Caveats</a>
 <br/>
 </div>
@@ -1274,7 +1274,7 @@ ArchiveStream is neither the highest fidelity nor the simplest tool available fo
 
 **Need help building a custom archiving solution?**
 
-> ✨ **[Hire the team that built Archivestream](https://zulip.archivestream.github.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102) to solve archiving for your org.** ([@ArchiveStreamApp](https://twitter.com/ArchiveStreamApp))
+> ✨ **[Hire the team that built Archivestream](https://zulip.archivestream.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102) to solve archiving for your org.** ([@ArchiveStreamApp](https://twitter.com/ArchiveStreamApp))
 
 <br/>
 
@@ -1319,8 +1319,8 @@ We use the [ArchiveStream GitHub Wiki](https://github.com/ArchiveStream/ArchiveS
 ## Developers
 
 - [Developer Documentation](https://github.com/ArchiveStream/ArchiveStream#archivestream-development)
-- [Python API](https://docs.archivestream.github.io/)
-- [REST API](https://demo.archivestream.github.io/api) (alpha)
+- [Python API](https://docs.archivestream.io/)
+- [REST API](https://demo.archivestream.io/api) (alpha)
 
 ## More Info
 
@@ -1345,7 +1345,7 @@ All contributions to ArchiveStream are welcomed! Check our [issues](https://gith
 
 For low hanging fruit / easy first tickets, see: <a href="https://github.com/ArchiveStream/ArchiveStream/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22help+wanted%22">ArchiveStream/Issues `#good first ticket` `#help wanted`</a>.
 
-**Python API Documentation:** https://docs.archivestream.github.io/en/dev/archivestream.html#module-archivestream.main
+**Python API Documentation:** https://docs.archivestream.io/en/dev/archivestream.html#module-archivestream.main
 
 **Internal Architecture Diagrams:** https://github.com/ArchiveStream/ArchiveStream/wiki/ArchiveStream-Architecture-Diagrams
 
@@ -1605,9 +1605,9 @@ Extractors take the URL of a page to archive, write their output to the filesyst
 
 <img src="https://raw.githubusercontent.com/Monadical-SAS/redux-time/HEAD/examples/static/jeremy.jpg" width="100px" align="right"/>
 
-- [archivestream.github.io Website](https://archivestream.github.io) / [ArchiveStream Github (Source Code)](https://github.com/ArchiveStream/ArchiveStream) / [ArchiveStream Demo Server](https://demo.archivestream.github.io)
-- [Documentation (Github Wiki)](https://github.com/ArchiveStream/ArchiveStream/wiki) / [API Reference Docs (ReadTheDocs)](https://docs.archivestream.github.io) / [Roadmap](https://github.com/ArchiveStream/ArchiveStream/wiki/Roadmap) / [Changelog](https://github.com/ArchiveStream/ArchiveStream/releases)
-- [Bug Tracker (Github Issues)](https://github.com/ArchiveStream/ArchiveStream/issues) / [Discussions (Github Discussions)](https://github.com/ArchiveStream/ArchiveStream/discussions) / [Community Chat Forum (Zulip)](https://zulip.archivestream.github.io)
+- [ArchiveStream.io Website](https://archivestream.io) / [ArchiveStream Github (Source Code)](https://github.com/ArchiveStream/ArchiveStream) / [ArchiveStream Demo Server](https://demo.archivestream.io)
+- [Documentation (Github Wiki)](https://github.com/ArchiveStream/ArchiveStream/wiki) / [API Reference Docs (ReadTheDocs)](https://docs.archivestream.io) / [Roadmap](https://github.com/ArchiveStream/ArchiveStream/wiki/Roadmap) / [Changelog](https://github.com/ArchiveStream/ArchiveStream/releases)
+- [Bug Tracker (Github Issues)](https://github.com/ArchiveStream/ArchiveStream/issues) / [Discussions (Github Discussions)](https://github.com/ArchiveStream/ArchiveStream/discussions) / [Community Chat Forum (Zulip)](https://zulip.archivestream.io)
 - Find us on social media: [Twitter `@ArchiveStreamApp`](https://twitter.com/ArchiveStreamApp), [LinkedIn](https://www.linkedin.com/company/archivestream/), [YouTube](https://www.youtube.com/@ArchiveStreamApp), [SaaSHub](https://www.saashub.com/archivestream), [Alternative.to](https://alternativeto.net/software/archivestream/about/), [Reddit](https://www.reddit.com/r/ArchiveStream/)
 
 ---
@@ -1626,7 +1626,7 @@ Extractors take the URL of a page to archive, write their output to the filesyst
 <br/><br/>
 <a href="https://twitter.com/ArchiveStreamApp"><img src="https://img.shields.io/badge/Tweet-%40ArchiveStreamApp-blue.svg?style=flat"/></a>&nbsp;
 <a href="https://github.com/ArchiveStream/ArchiveStream"><img src="https://img.shields.io/github/stars/ArchiveStream/ArchiveStream.svg?style=flat&label=Star+on+Github"/></a>&nbsp;
-<a href="https://zulip.archivestream.github.io/"><img src="https://img.shields.io/badge/Join_Our_Community-Zulip_Forum-%23B7EDFE.svg"/></a><br/><br/>
+<a href="https://zulip.archivestream.io/"><img src="https://img.shields.io/badge/Join_Our_Community-Zulip_Forum-%23B7EDFE.svg"/></a><br/><br/>
 <hr/>
 <i>✨ Have spare CPU/disk/bandwidth after all your 网站存档爬 and want to help the world?<br/>Check out our <a href="https://github.com/ArchiveStream/good-karma-kit">Good Karma Kit</a>...</i>
 </div>

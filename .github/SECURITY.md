@@ -31,4 +31,4 @@ We use Github's built-in [Private Reporting](https://docs.github.com/en/code-sec
 
 3. Fill out the form to submit the details of the report and it will be securely sent to the maintainers
 
-You can also contact the maintainers via our public [Zulip Chat Server zulip.archivestream.github.io](https://zulip.archivestream.github.io) or [Twitter DMs @ArchiveStreamApp](https://twitter.com/ArchiveStreamApp).
+You can also contact the maintainers via our public [Zulip Chat Server zulip.archivestream.io](https://zulip.archivestream.io) or [Twitter DMs @ArchiveStreamApp](https://twitter.com/ArchiveStreamApp).

@@ -21,7 +21,7 @@ FROM python:3.11-slim-bookworm
 # FROM debian:bookworm-backports
 
 LABEL name="archivestream" \
-    maintainer="Nick Sweeting <dockerfile@archivestream.github.io>" \
+    maintainer="Nick Sweeting <dockerfile@archivestream.io>" \
     description="All-in-one self-hosted internet archiving solution" \
     homepage="https://github.com/ArchiveStream/ArchiveStream" \
     documentation="https://github.com/ArchiveStream/ArchiveStream/wiki/Docker" \
@@ -33,10 +33,10 @@ LABEL name="archivestream" \
     # TODO: release ArchiveStream as a Docker Desktop extension (requires these labels):
     # https://docs.docker.com/desktop/extensions-sdk/architecture/metadata/
     com.docker.desktop.extension.api.version=">= 1.4.7" \
-    com.docker.desktop.extension.icon="https://archivestream.github.io/icon.png" \
-    com.docker.extension.publisher-url="https://archivestream.github.io" \
+    com.docker.desktop.extension.icon="https://archivestream.io/icon.png" \
+    com.docker.extension.publisher-url="https://archivestream.io" \
     com.docker.extension.screenshots='[{"alt": "Screenshot of Admin UI", "url": "https://github.com/ArchiveStream/ArchiveStream/assets/511499/e8e0b6f8-8fdf-4b7f-8124-c10d8699bdb2"}]' \
-    com.docker.extension.detailed-description='See here for detailed documentation: https://wiki.archivestream.github.io' \
+    com.docker.extension.detailed-description='See here for detailed documentation: https://wiki.archivestream.io' \
     com.docker.extension.changelog='See here for release notes: https://github.com/ArchiveStream/ArchiveStream/releases' \
     com.docker.extension.categories='database,utility-tools'
 

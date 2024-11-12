@@ -3,7 +3,7 @@ name = "archivestream"
 version = "0.8.6rc0"
 requires-python = ">=3.10"
 description = "Self-hosted internet archiving solution."
-authors = [{name = "Nick Sweeting", email = "pyproject.toml@archivestream.github.io"}]
+authors = [{name = "Nick Sweeting", email = "pyproject.toml@archivestream.io"}]
 license = {text = "MIT"}
 readme = "README.md"
 keywords = ["internet archiving", "web archiving", "digipres", "warc", "preservation", "backups", "archiving", "web", "bookmarks", "puppeteer", "browser", "download"]
@@ -288,7 +288,7 @@ Documentation = "https://github.com/ArchiveStream/ArchiveStream/wiki"
 Changelog = "https://github.com/ArchiveStream/ArchiveStream/releases"
 Roadmap = "https://github.com/ArchiveStream/ArchiveStream/wiki/Roadmap"
 Community = "https://github.com/ArchiveStream/ArchiveStream/wiki/Web-Archiving-Community"
-Demo = "https://demo.archivestream.github.io"
+Demo = "https://demo.archivestream.io"
 Donate = "https://github.com/ArchiveStream/ArchiveStream/wiki/Donations"
 
 

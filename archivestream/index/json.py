@@ -29,7 +29,7 @@ def generate_json_index_from_links(links: List[Link], with_headers: bool):
             'project': 'ArchiveStream',
             'version': VERSION,
             'git_sha': VERSION,  # not used anymore, but kept for backwards compatibility
-            'website': 'https://archivestream.github.io',
+            'website': 'https://ArchiveStream.io',
             'docs': 'https://github.com/ArchiveStream/ArchiveStream/wiki',
             'source': 'https://github.com/ArchiveStream/ArchiveStream',
             'issues': 'https://github.com/ArchiveStream/ArchiveStream/issues',
