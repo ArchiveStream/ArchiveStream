@@ -1,5 +1,5 @@
 # Usage:
-#     curl -fsSL 'https://docker-compose.archivestream.io' > docker-compose.yml
+#     curl -fsSL 'https://docker-compose.archivestream.github.io' > docker-compose.yml
 #     docker compose up
 #     docker compose run archivestream version
 #     echo 'https://example.com' | docker compose run -T archivestream add

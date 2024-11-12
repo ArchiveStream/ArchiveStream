@@ -4,7 +4,7 @@
 #   - Install Documentation: https://github.com/ArchiveStream/ArchiveStream/wiki/Install
 # Script Usage:
 #    curl -fsSL 'https://raw.githubusercontent.com/ArchiveStream/ArchiveStream/dev/bin/setup.sh' | bash
-#           (aka https://docker-compose.archivestream.io)
+#           (aka https://docker-compose.archivestream.github.io)
 
 ### Bash Environment Setup
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/

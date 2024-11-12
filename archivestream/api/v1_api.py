@@ -27,7 +27,7 @@ html_description=f'''
 <br/>
 <ul>
 <li>⬅️ Manage your server: <a href="/admin/api/"><b>Setup API Keys</b></a>, <a href="/admin/">Go to your Server Admin UI</a>, <a href="/">Go to your Snapshots list</a> 
-<li>💬 Ask questions and get help here: <a href="https://zulip.archivestream.io">ArchiveStream Chat Forum</a></li>
+<li>💬 Ask questions and get help here: <a href="https://zulip.archivestream.github.io">ArchiveStream Chat Forum</a></li>
 <li>🐞 Report API bugs here: <a href="https://github.com/ArchiveStream/ArchiveStream/issues">Github Issues</a></li>
 <li>📚 ArchiveStream Documentation: <a href="https://github.com/ArchiveStream/ArchiveStream/wiki">Github Wiki</a></li>
 <li>📜 See the API source code: <a href="https://github.com/ArchiveStream/ArchiveStream/blob/dev/archivestream/api"><code>archivestream/api/</code></a></li>
