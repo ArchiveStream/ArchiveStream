@@ -81,7 +81,7 @@ services:
             # not needed after first run / if you have already have ./etc/sonic.cfg present
             dockerfile_inline: |
                 FROM quay.io/curl/curl:latest AS config_downloader
-                COPY /etc/sonic.cfg /tmp/sonic.cfg
+                RUN curl -fsSL 'https://raw.githubusercontent.com/ArchiveStream/ArchiveStream/main/etc/sonic.cfg' > /tmp/sonic.cfg
                 FROM valeriansaliou/sonic:latest
                 COPY --from=config_downloader /tmp/sonic.cfg /etc/sonic.cfg
         expose:
