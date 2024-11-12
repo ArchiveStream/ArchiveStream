@@ -1,5 +1,5 @@
 # Usage:
-#     curl -fsSL 'https://docker-compose.archivestream.io' > docker-compose.yml
+#     curl -fsSL 'https://docker-compose.archivestream.github.io' > docker-compose.yml
 #     docker compose up
 #     docker compose run archivestream version
 #     echo 'https://example.com' | docker compose run -T archivestream add
@@ -81,7 +81,7 @@ services:
             # not needed after first run / if you have already have ./etc/sonic.cfg present
             dockerfile_inline: |
                 FROM quay.io/curl/curl:latest AS config_downloader
-                RUN curl -fsSL 'https://raw.githubusercontent.com/ArchiveStream/ArchiveStream/stable/etc/sonic.cfg' > /tmp/sonic.cfg
+                RUN curl -fsSL 'https://raw.githubusercontent.com/ArchiveStream/ArchiveStream/main/etc/sonic.cfg' > /tmp/sonic.cfg
                 FROM valeriansaliou/sonic:latest
                 COPY --from=config_downloader /tmp/sonic.cfg /etc/sonic.cfg
         expose:
