@@ -1,0 +1,310 @@
+# The Good Karma Kit
+# MIT License | https://github.com/ArchiveStream/good-karma-kit
+
+# Initial Setup ##########################################################################
+#
+#    Install Docker & Docker-Comose on your system: https://docs.docker.com/get-docker/
+#
+#    Read through all the services below, and for each <container> e.g. archivewarrior:
+#
+#      1. tune the cpu, memory, storage limits, and example env config
+#      2. pull and start the container
+#         $ docker-compose pull archivewarrior
+#         $ docker-compose up archivewarrior
+#      3. log in to the web UIs or online accounts to finish configuring each project, e.g.
+#         $ open http://127.0.0.1:8001
+
+# Usage Examples #########################################################################
+#
+#    docker-compose help
+#    docker-compose pull                       # download the latest version of the images
+#    docker-compose down                       # stop all containers
+#    docker-compose up                         # start all the containers
+#    docker-compose ps                         # view container statuses, pids, ports, etc.
+#    docker-compose exec <container> /bin/sh   # run a shell command inside a container
+
+
+version: '2.4'
+# >= v3.9 also works
+
+services:
+
+  ### Autoupdater (optional, uncomment to enable)
+  
+  # watchtower:
+  #   # Automatically updates & restarts the containers when they have new versions available
+  #   # https://containrrr.dev/watchtower
+  #   # https://github.com/containrrr/watchtower
+  #   image: containrrr/watchtower
+  #   command: --scope goodkarmakit
+  #   volumes:
+  #     # Security warning: in order to apply updates, it needs admin access to administer *all* docker containers on the host system
+  #     - /var/run/docker.sock:/var/run/docker.sock
+
+
+  ### Distributed networking projects
+
+  tor:
+    # View your stats on the leaderboard with your public IP address or node ID:
+    #    https://metrics.torproject.org/rs.html#search
+    # https://www.torproject.org/
+    # https://community.torproject.org/relay/setup/bridge/docker/
+    # https://hub.docker.com/r/thetorproject/obfs4-bridge
+    image: thetorproject/obfs4-bridge
+    ports:
+      - 9393:9393
+      - 9292:9292
+    environment:
+      - OR_PORT=9393
+      - PT_PORT=9292
+      - EMAIL=youremail@example.com
+    # volumes:
+    #  - ./data/tor:/var/lib/tor   # optional to store temp config between restarts
+    cpus: 2                        # tune according to your system & preferences
+    mem_limit: 2048m               # tune according to your system & preferences
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+  i2p:
+    # https://geti2p.net/en/
+    # https://hub.docker.com/r/divax/i2p
+    image: divax/i2p:current
+    ports:
+      - 7070:7070
+      - 4444:4444
+      - 4445:4445
+      - 9050:9050
+      # - 127.0.0.1:8080:8080      # optional: proxy port for accessing i2p
+    cpus: 2                        # tune according to your system & preferences
+    mem_limit: 2048m               # tune according to your system & preferences
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+
+### Distributed computing projects
+
+  boinc:
+    # Set up your active project and resources in the Web UI
+    #   http://127.0.0.1:7279
+    # https://boinc.berkeley.edu/
+    # https://hub.docker.com/r/linuxserver/boinc
+    image: ghcr.io/linuxserver/boinc
+    ports:
+      - 127.0.0.1:7279:8080
+    # devices:                     # optional, uncomment to use GPU
+    #  - /dev/dri:/dev/dri
+    volumes:
+      - ./data/boinc:/config
+    cpus: 4                        # tune according to your system & preferences
+    mem_limit: 4096m               # tune according to your system & preferences
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+  foldingathome:
+    # Set up your active project and resources in the Web UI
+    #   http://127.0.0.1:7396
+    # https://foldingathome.org/
+    # https://hub.docker.com/r/linuxserver/foldingathome
+    image: ghcr.io/linuxserver/foldingathome
+    ports:
+      - 127.0.0.1:7396:7396
+      - 127.0.0.1:36330:36330  # optional
+    volumes:
+      - ./data/foldingathome:/config
+    cpus: 4                        # tune according to your system & preferences
+    mem_limit: 4096m               # tune according to your system & preferences
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+
+### Internet Archiving projects
+
+  archivewarrior:
+    # Choose an active project and view your stats using the web UI
+    #   http://127.0.0.1:8001
+    # http://warrior.archiveteam.org/
+    # https://hub.docker.com/r/archiveteam/warrior-dockerfile/
+    image: atdr.meo.ws/archiveteam/warrior-dockerfile
+    ports:
+      - 127.0.0.1:8001:8001
+    environment:
+      # - HTTP_USERNAME=
+      # - HTTP_PASSWORD=
+      - DOWNLOADER=ANY_UNIQUE_WORKER_NICKNAME     # e.g. DOWNLOADER=JaneDoe4242
+      - WORKER_ID=ANY_UNIQUE_WORKER_NICKNAME      #      WORKER_ID=JaneDoe4242
+      - SELECTED_PROJECT=auto
+      - CONCURRENT_ITEMS=3
+    cpus: 3
+    mem_limit: 3072m
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+  # zimfarm:
+  #   # Contact OpenZIM to register for zimfarm before uncommenting this (requires static IP)
+  #   #    https://github.com/openzim/zimfarm/blob/master/workers/README.md#run-a-worker
+  #   #    https://farm.openzim.org/
+  #   # https://github.com/openzim/zimfarm
+  #   # https://hub.docker.com/r/openzim/zimfarm-worker-manager
+  #   image: ghcr.io/openzim/zimfarm-worker-manager
+  #   environment:
+  #     - ZIMFARM_USERNAME=
+  #     - ZIMFARM_ROOT=/data/zimfarm
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - ./data/zimfarm:/data/zimfarm
+  #   cpus: 3
+  #   mem_limit: 3072m
+  #   restart: on-failure
+  #   labels:
+  #     - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+  kiwix:
+    # Make sure to download some ZIM files to serve + create a library.xml first
+    #    https://wiki.kiwix.org/wiki/Content_in_all_languages
+    #    https://wiki.kiwix.org/wiki/Kiwix-manage
+    #    https://wiki.kiwix.org/wiki/Kiwix-serve
+    # https://www.kiwix.org/en/
+    # https://hub.docker.com/r/kiwix/kiwix-serve
+    image: kiwix/kiwix-serve:latest
+    entrypoint: "/usr/local/bin/kiwix-serve --port 9494 --verbose --library /data/library.xml"
+    ports:
+      - 0.0.0.0:9494:9494
+    volumes:
+      - ./data/kiwix:/data:ro
+    cpus: 1
+    mem_limit: 768m
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+  archivestream:
+    # Make sure to add some archived content with the web UI
+    #   http://127.0.0.1:9595/add/
+    # https://archivestream.io
+    # https://hub.docker.com/r/archivestream/archivestream/
+    image: archivestream/archivestream:latest
+    command: server --quick-init 0.0.0.0:9595
+    ports:
+      - 0.0.0.0:9595:9595
+    environment:
+      - PUBLIC_INDEX=True
+      - PUBLIC_SNAPSHOTS=True
+      - PUBLIC_ADD_VIEW=False
+    volumes:
+      - ./data/archivestream:/data
+    cpus: 3
+    mem_limit: 3072m
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+  pywb:
+    # Make sure to add some archived content with the web UI
+    #   http://127.0.0.1:9797
+    # https://github.com/webrecorder/pywb
+    # https://hub.docker.com/r/webrecorder/pywb
+    image: webrecorder/pywb:latest
+    command: wayback
+    environment:
+      - INIT_COLLECTION=YOUR_COLLECTION_NAME
+    ports:
+      - 127.0.0.1:9797:8080
+    volumes:
+      - ./data/pywb:/webarchive
+    cpus: 3
+    mem_limit: 3072m
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+
+### Distribued storage projects
+  
+  ipfs:
+    # Make sure to pin some files you want to host for others using the web UI
+    #   http://127.0.0.1:5001
+    # https://ipfs.io
+    # https://docs.ipfs.tech/install/run-ipfs-inside-docker/
+    # https://hub.docker.com/r/ipfs/kubo/
+    image: ipfs/kubo
+    ports:
+      
+      - 4001:4001
+      - 4001:4001/udp         # public swarm UDP
+      - 8080:8080             # public gateway
+      - 127.0.0.1:5001:5001   # private API
+    volumes:
+      - ./data/ipfs:/data/ipfs
+    cpus: 2
+    mem_limit: 2048m
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+  storj:
+    # Make sure to first create a Storj wallet to hold your earnings
+    #    https://registration.storj.io/
+    #    http://127.0.0.1:14002/
+    # https://www.storj.io/
+    # https://hub.docker.com/r/storjlabs/storagenode
+    image: storjlabs/storagenode
+    ports:
+      - 28967:28967
+      - 127.0.0.1:14002:14002
+    environment:
+      - WALLET=YOUR_STORJ_PAYOUT_ADDRESS_HERE
+      - EMAIL=YOUR_EMAIL_HERE@example.com
+      - STORAGE=100GB
+    volumes:
+      - ./data/storj/config:/app/config
+      - ./data/storj/identity/storagenode:/app/identity
+    cpus: 2
+    mem_limit: 2048m
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+  sia:
+    # https://sia.tech/
+    # https://hub.docker.com/r/nebulouslabs/sia
+    image: nebulouslabs/sia
+    ports:
+      - 9981:9981
+      - 9982:9982
+      - 9983:9983
+      - 9984:9984
+      - 127.0.0.1:9980:9980
+    volumes:
+      - ./data/sia:/sia-data
+    cpus: 2
+    mem_limit: 2048m
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
+
+  transmission:
+    image: linuxserver/transmission
+    # Add files to seed via the Web UI:
+    #   https://127.0.0.1:9091
+    # https://github.com/transmission/transmission
+    # https://hub.docker.com/r/linuxserver/transmission/
+    ports:
+        - 127.0.0.1:9091:9091      # admin HTTP UI
+        - 51413:51413              # public BitTorrent TCP port
+        - 51413:51413/udp          # public BitTorrent UDP port
+    # environment:
+    #   - USER=yourDesiredAdminUsernameHere
+    #   - PASS=CHANGETHISPASSWORD
+    volumes:
+        - ./data/transmission/files:/data
+        - ./data/transmission:/config
+    cpus: 2
+    mem_limit: 2048m
+    restart: on-failure
+    labels:
+      - "com.centurylinklabs.watchtower.scope=goodkarmakit"
