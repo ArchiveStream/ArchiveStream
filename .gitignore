@@ -1,0 +1,42 @@
+.DS_Store
+._*
+*.pyc
+__pycache__/
+.mypy_cache/
+.eggs/
+tests/out/
+
+# Python and Node dependencies
+venv/
+.venv/
+.docker-venv/
+node_modules/
+typings/
+
+# Ignore dev lockfiles (should always be built fresh)
+pdm.dev.lock
+requirements-dev.txt
+
+# Packaging artifacts
+.pdm-python
+.pdm-build
+archivestream.egg-info
+archivestream-*.tar.gz
+build/
+dist/
+
+# Data folders
+lib/
+tmp/
+data/
+data*/
+output/
+index.sqlite3
+queue.sqlite3
+*.sqlite*
+data.*
+.archivestream_id
+
+# vim
+*.sw?
+.vscode

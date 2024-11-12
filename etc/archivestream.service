@@ -1,0 +1,29 @@
+# This is an example systemd service config definition for ArchiveStream.
+#
+# Link it into place on your system to use systemd to auto-start the ArchiveStream server on boot:
+#   https://unix.stackexchange.com/questions/224992/where-do-i-put-my-systemd-unit-file
+#
+# Review and change these lines as-needed for your specific environment and needs:
+#   WorkingDirectory, ExecStart, User, Group
+
+[Unit]
+Description=Open source self-hosted web archiving
+Documentation=https://github.com/ArchiveStream/ArchiveStream/wiki
+
+[Service]
+Type=simple
+WorkingDirectory=/home/archivestream/archivestream/
+ExecStart=/usr/local/bin/archivestream server 0.0.0.0:8000
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+Restart=always
+RestartSec=2
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=archivestream
+User=archivestream
+Group=archivestream
+
+
+[Install]
+WantedBy=multi-user.target
