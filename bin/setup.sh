@@ -39,9 +39,9 @@ if (which docker > /dev/null && docker pull archivestream/archivestream:latest);
     if [ -f "./index.sqlite3" ]; then
         mv -i ~/archivestream/* ~/archivestream/data/
     fi
-    curl -fsSL 'https://raw.githubusercontent.com/ArchiveStream/ArchiveStream/stable/docker-compose.yml' > docker-compose.yml
+    curl -fsSL 'https://raw.githubusercontent.com/ArchiveStream/ArchiveStream/main/docker-compose.yml' > docker-compose.yml
     mkdir -p ./etc
-    curl -fsSL 'https://raw.githubusercontent.com/ArchiveStream/ArchiveStream/stable/etc/sonic.cfg' > ./etc/sonic.cfg
+    curl -fsSL 'https://raw.githubusercontent.com/ArchiveStream/ArchiveStream/main/etc/sonic.cfg' > ./etc/sonic.cfg
     docker compose run --rm archivestream init --setup
     echo
     echo "[+] Starting ArchiveStream server using: docker compose up -d..."
