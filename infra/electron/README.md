@@ -27,7 +27,7 @@ https://docs.docker.com/get-docker/
 
 ```bash
 # Clone this repository
-git clone https://github.com/ArchiveStream/ArchiveStream && cd electron-archivestream
+git clone https://github.com/ArchiveStream/ArchiveStream && cd infra/electron
 
 # Install dependencies
 npm install
